@@ -51,7 +51,7 @@ const TaskList = ({ allTasks }) => {
                 {tasks.map((task) => (
                     <li key={task.taskId} className='flex w-full gap-10'>
                         <h3
-                            className={`text-xl font-semibold hover:line-through py-2 mx-auto w-full cursor-pointer select-none ${task.checked ? 'line-through' : ''}`}
+                            className={`text-xl font-semibold hover:line-through py-2 mx-auto w-full cursor-pointer select-none ${task.checked ? 'line-through hover:no-underline' : ''}`}
                             onClick={() => toggleTask(task.taskId)}
                         >
                             {task.Task}
