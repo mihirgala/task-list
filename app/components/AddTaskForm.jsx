@@ -30,10 +30,10 @@ const addTaskForm = ({getTasks}) => {
 
     }
     return (
-        <div className='m-5'>
-            <form className='gap-5' onSubmit={handleSubmit}>
-                <input type="text" value={task} onChange={(e) => setTask(e.target.value)} className='border-[1px] border-black' name='task' />
-                <input type="submit" className='border-[1px] border-black' value="Add Task" />
+        <div className='my-5 flex justify-center'>
+            <form className='flex gap-5' onSubmit={handleSubmit}>
+                <input type="text" value={task} onChange={(e) => setTask(e.target.value)} className='bg-transparent border-[#64C8FF] border-[2px] p-3 rounded-xl focus:outline-none focus:border-[#1abc9c] ' maxLength={150} placeholder='Enter Task Here' name='task' required/>
+                <input type="submit" className='mt-auto border-b-[4px] font-semibold px-5 py-2 rounded-md border-[#64C8FF] hover:border-[#1abc9c]' value="ADD" />
             </form>
         </div>
     )

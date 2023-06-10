@@ -45,20 +45,24 @@ const TaskList = ({ allTasks }) => {
 
     return (
         <>
-            <AddTaskForm getTasks={getTasks} />
-            <div className='p-2'>
+        <AddTaskForm getTasks={getTasks} />
+        <div className='flex justify-center w-[100%]'>
+            <ul className='p-2 flex gap-2 flex-col'>
                 {tasks.map((task) => (
-                    <div key={task.taskId} className='flex gap-10'>
+                    <li key={task.taskId} className='flex w-full gap-10'>
                         <h3
-                            className={`text-xl cursor-pointer select-none ${task.checked ? 'line-through' : ''}`}
+                            className={`text-xl font-semibold hover:line-through py-2 mx-auto w-full cursor-pointer select-none ${task.checked ? 'line-through' : ''}`}
                             onClick={() => toggleTask(task.taskId)}
                         >
                             {task.Task}
                         </h3>
-                        <button onClick={() => deleteTask(task.taskId)}>X</button>
-                    </div>
+                        <button
+                        className='mb-auto border-b-[4px] pt-2 font-semibold px-5 rounded-md border-[#64C8FF] hover:border-[#df1414]'
+                        onClick={() => deleteTask(task.taskId)}>X</button>
+                    </li>
                 ))}
-            </div>
+            </ul>
+        </div>
         </>
     );
 };
